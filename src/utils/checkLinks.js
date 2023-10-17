@@ -24,5 +24,5 @@ async function getLinksStatus(links) {
     return results;
   }
   
-  module.exports = getLinksStatus;
+  export default getLinksStatus;
   

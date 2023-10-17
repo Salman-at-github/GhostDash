@@ -1,7 +1,7 @@
 import React, { useContext, useEffect,useState } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import { ExtractLinks } from '../utils/utils';
-import checkLinks from '../utils/checkLinks';
+import getLinksStatus from '../utils/checkLinks';
 
 const Links = () => {
 
@@ -51,7 +51,7 @@ const Links = () => {
         let intBrokenLink = [];
         let extBrokenLink = [];
 
-        const checkedLinks = await checkLinks(totalLinks)
+        const checkedLinks = await getLinksStatus(totalLinks)
 
         console.log("new links ",checkedLinks)
         checkedLinks.forEach((linkItem)=>{
