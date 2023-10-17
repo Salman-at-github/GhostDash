@@ -80,10 +80,10 @@ const Dashboard = () => {
 
           //return 5 latest posts with their link that opens in a new tab
           return (
-            <div key={index} className="bg-gradient-to-l from-blue-950 to-black p-4 mb-4 rounded-lg shadow-md hover:border-[1px] hover:border-cyan-100 border-[1px] border-black sm:h-24">
+            <div key={index} className="bg-gradient-to-l from-blue-950 to-black p-4 mb-4 rounded-lg shadow-md hover:border-[1px] hover:border-cyan-100 border-[1px] border-black h-fit">
               <a href={`${post.url}`} target="_blank" rel="noreferrer" className="text-xl text-cyan-200 hover:text-yellow-200 mb-2">{post.title}</a>
               <p className="text-sm text-gray-200 mt-2">
-                Date: {hours}:{minutes}{' '}{publishedAt.toLocaleDateString(undefined, options)}
+                Date: {publishedAt.toLocaleDateString(undefined, options)}{' '}<span className="text-green-500 font-bold text-xs">{hours}:{minutes} IST</span>
               </p>
             </div>
           );

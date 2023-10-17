@@ -29,7 +29,7 @@ const GlobalStateProvider = (props) =>{
     //fetch posts
     const getPosts = async () => {
         const response = await fetch(
-          `${host}/ghost/api/content/posts/?key=${key}`
+          `${host}/ghost/api/v3/content/posts/?key=${key}`
         );
         const data = await response.json();
         if (response.status === 200) {
@@ -75,7 +75,7 @@ const GlobalStateProvider = (props) =>{
       //fetch pages
       const getPages = async () => {
         const response = await fetch(
-          `${host}/ghost/api/content/pages/?key=${key}`
+          `${host}/ghost/api/v3/content/pages/?key=${key}`
         );
         const data = await response.json();
         if (response.status === 200) {
@@ -86,7 +86,7 @@ const GlobalStateProvider = (props) =>{
     //   fetch authors
       const getAuthors = async () => {
         const response = await fetch(
-          `${host}/ghost/api/content/authors/?key=${key}`
+          `${host}/ghost/api/v3/content/authors/?key=${key}`
         );
         const data = await response.json();
         if (response.status === 200) {
@@ -97,7 +97,7 @@ const GlobalStateProvider = (props) =>{
       //fetch tags
       const getTags = async () => {
         const response = await fetch(
-          `${host}/ghost/api/content/tags/?key=${key}`
+          `${host}/ghost/api/v3/content/tags/?key=${key}`
         );
         const data = await response.json();
         if (response.status === 200) {
