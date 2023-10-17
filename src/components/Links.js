@@ -19,10 +19,12 @@ const Links = () => {
 
       postData.forEach((post) => {
         const linksArray = ExtractLinks(post.html);
-        if (linksArray.length && linksArray.length > 0) {
+        console.log(typeof(post.html))
+        if (linksArray && linksArray.length && linksArray.length > 0) {
           totLink = [...totLink, ...linksArray];
         }
       });
+      
       // Remove duplicate links
       const uniqueLinks = Array.from(new Set(totLink));
       setTotalLinks(uniqueLinks);
@@ -32,7 +34,7 @@ const Links = () => {
   }, []);
 
   useEffect(() => {
-    if (totalLinks && totalLinks.length > 0) {
+    if (totalLinks && totalLinks.length && totalLinks.length > 0) {
       let intLinks = 0;
       let extLinks = 0;
 

@@ -2,6 +2,8 @@ const cheerio = require('cheerio');
 //HELPER FUNCTIONS
 
 export function countWordsInHTML(html) {
+  if(html && typeof(html)==='string'){
+
     // Remove HTML tags and entities
     const textContent = html.replace(/<\/?[^>]+(>|$)/g, "");
   
@@ -14,22 +16,26 @@ export function countWordsInHTML(html) {
     // Return the number of words
     return filteredWords.length;
   }
+  }
 
 export const  ExtractLinks = (html)=>{
 
-  const linksArray = [];
-  const $ = cheerio.load(html);
+  if(html && typeof(html)==='string'){
 
-  // Find all 'a' elements and extract their 'href' attributes
-  $('a').each((index, element) => {
-    const href = $(element).attr('href');
-    //valid links would be atleast > 3 chars
-    if (href && href.length > 4) {
-      linksArray.push(href);
-    }
-  });
-
-  return linksArray;
+    const linksArray = [];
+    const $ = cheerio.load(html);
+  
+    // Find all 'a' elements and extract their 'href' attributes
+    $('a').each((index, element) => {
+      const href = $(element).attr('href');
+      //valid links would be atleast > 3 chars
+      if (href && href.length > 4) {
+        linksArray.push(href);
+      }
+    });
+  
+    return linksArray;
+  }
 }
 
 
